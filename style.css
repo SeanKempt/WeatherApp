@@ -1,0 +1,26 @@
+#location-search {
+  margin-top: 10px;
+}
+
+#header-container {
+  background-color: rgb(58, 79, 26);
+  height: 8vh;
+}
+
+#main-container {
+  background-color: rgb(48, 83, 83);
+  min-height: calc(100vh - 13vh);
+}
+
+#footer-container {
+  background-color: blueviolet;
+  height: 5vh;
+}
+
+.card {
+  width: 65rem;
+}
+
+#wrapper {
+  padding: 0;
+}

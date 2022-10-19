@@ -1,6 +1,16 @@
 const locationInput = document.querySelector(`#location-set`);
 const locationBtn = document.querySelector(`#location-btn`);
 
+const roundValue = (obj) => {
+  const roundedObj = obj;
+  Object.keys(roundedObj).map((key) => {
+    if (typeof roundedObj[key] === 'number') {
+      roundedObj[key] = Math.round(roundedObj[key]);
+    }
+    return roundedObj;
+  });
+};
+
 const processWeather = (data) => {
   const {
     temp,
@@ -19,11 +29,10 @@ const getWeather = async (query) => {
   );
   const data = await response.json();
   const weather = processWeather(data);
+  roundValue(weather);
   console.log(weather);
 };
 
 locationBtn.addEventListener('click', () => {
   getWeather(locationInput.value);
 });
-
-//find way to round the values of the raw weather data. I want to run the math.round method against all of the data returned from the API
